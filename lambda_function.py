@@ -11,7 +11,7 @@ INSTANCE_ID = os.getenv("INSTANCE_ID")
 SNS_TOPIC_ARN = os.getenv("SNS_TOPIC_ARN")
 
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
-TEAMS_WEBHOOK_URL = os.getenv("TEAMS_WEBHOOK_URL")
+#TEAMS_WEBHOOK_URL = os.getenv("TEAMS_WEBHOOK_URL")
 
 # -----------------------------------------------------------------------------
 # SSM Cleanup Commands
@@ -51,7 +51,7 @@ def send_slack(message, success=True):
 # Teams
 # -----------------------------------------------------------------------------
 
-def send_teams(message, success=True):
+/*def send_teams(message, success=True):
 
     color = "00FF00" if success else "FF0000"
 
@@ -68,7 +68,7 @@ def send_teams(message, success=True):
         TEAMS_WEBHOOK_URL,
         json=payload,
         timeout=10
-    )
+    ) */
 
 # -----------------------------------------------------------------------------
 # Lambda Handler
@@ -105,7 +105,7 @@ def lambda_handler(event, context):
         send_slack(message)
 
         # Teams
-        send_teams(message)
+        #send_teams(message)
 
         return {
             "statusCode": 200,
