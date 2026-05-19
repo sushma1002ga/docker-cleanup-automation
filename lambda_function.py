@@ -51,7 +51,7 @@ def send_slack(message, success=True):
 # Teams
 # -----------------------------------------------------------------------------
 
-/*def send_teams(message, success=True):
+#def send_teams(message, success=True):
 
     color = "00FF00" if success else "FF0000"
 
@@ -68,7 +68,7 @@ def send_slack(message, success=True):
         TEAMS_WEBHOOK_URL,
         json=payload,
         timeout=10
-    ) */
+    ) 
 
 # -----------------------------------------------------------------------------
 # Lambda Handler
